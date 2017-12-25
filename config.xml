@@ -12,11 +12,7 @@
   <description>
       An example for phonegap build docs.
   </description>
-<supports-screens android:anyDensity="true" android:resizeable="true"
-  android:smallScreens="true"
-  android:normalScreens="true"
-  android:largeScreens="true"
-  android:xlargeScreens="true" />
+
   <author href="http://blogmiheeva.ru" email="aleksvalmix@yandex.ru">
       Mikheev Aleksey
   </author>
