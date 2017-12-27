@@ -17,11 +17,9 @@
       Mikheev Aleksey
   </author>
     <preference name="orientation" value="portrait" />
-    <icon src="img/MAjZxWnTvBRn7A.jpg" platform="android" qualifier="ldpi" />
-    <icon src="img/MAjZxWnTvBRn7A.jpg" platform="android" qualifier="mdpi" />
-    <icon src="img/MAjZxWnTvBRn7A.jpg" platform="android" qualifier="hdpi" />
-    <icon src="img/MAjZxWnTvBRn7A.jpg" platform="android" qualifier="xhdpi" />
-    <icon src="img/MAjZxWnTvBRn7A.jpg" platform="android" qualifier="xxhdpi" />
-    <icon src="img/MAjZxWnTvBRn7A.jpg" platform="android" qualifier="xxxhdpi" />
-    <icon src="img/MAjZxWnTvBRn7A.jpg" platform="android" qualifier="fr-xxhdpi" />
+    <icon src="img/android/mipmap-mdpi/ic_launcher.png" platform="android" qualifier="mdpi" />
+    <icon src="img/android/mipmap-hdpi/ic_launcher.png" platform="android" qualifier="hdpi" />
+    <icon src="img/android/mipmap-xhdpi/ic_launcher.png" platform="android" qualifier="xhdpi" />
+    <icon src="img/android/mipmap-xxhdpi/ic_launcher.png" platform="android" qualifier="xxhdpi" />
+    <icon src="img/android/mipmap-xxxhdpi/ic_launcher.png" platform="android" qualifier="xxxhdpi" />
 </widget>
