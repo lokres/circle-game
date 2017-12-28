@@ -12,7 +12,7 @@
 
 #scoreContainer
 {
-    color: white; font-size: 15px;    
+    color: white; font-size: 4vw;    
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -21,4 +21,40 @@
     user-select: none;
     position: absolute;
     bottom: 0;
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+
+#leftScoreBlock
+{
+    float: left;
+}
+
+#menu
+{
+    float: right;
+}
+
+#navbar {
+  margin: 0;
+  padding: 10px;
+  list-style-type: none;
+  border-radius: 15px;
+}
+
+#navbar ul {
+}
+#navbar span {
+  background-color: #949494;
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border-left: 5px solid #33ADFF;
+  display: block;
+}
+#navbar li {
+  margin-top: 10px;
+  border-bottom: 1px solid #666;
+  cursor:pointer;
 }
