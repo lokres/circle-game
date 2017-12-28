@@ -2,8 +2,8 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.mikheev.circles"
-    versionCode = "15"
-    version     = "1.1.0" >
+    versionCode = "16"
+    version     = "1.1.1" >
 
 <!-- versionCode is optional and Android only -->
 
@@ -19,7 +19,6 @@
     <preference name="orientation" value="portrait" />
     <preference name="android-build-tool" value="ant|gradle" />
     <preference name="android-minSdkVersion" value="10" />
-    <preference name="android-maxSdkVersion" value="15" />
     <preference name="android-targetSdkVersion" value="12" />
     <icon src="img/android/mipmap-mdpi/ic_launcher.png" platform="android" qualifier="mdpi" />
     <icon src="img/android/mipmap-hdpi/ic_launcher.png" platform="android" qualifier="hdpi" />
