@@ -74,6 +74,20 @@ $( document ).ready(function() {
     });
 });
 var model = {
+
+    saveResult: function(){
+        name = prompt('Your Name');
+        if(name){
+            $.ajax({
+                type: 'POST',
+                url: 'http://blogmiheeva.ru/wp-content/mygame/insertRecords.php',
+                data: {name:name, score:$('#score').text()},
+                success: function(data){
+                  alert(data)
+                }
+              });
+        }
+    },
     gameOver: function() {
         var style = new PIXI.TextStyle({ //стили для текста
             fill: '0xffffff',
@@ -85,6 +99,8 @@ var model = {
         gameOverText.pivot.x = 50; //выравниваем по оси х
         gameOverText.pivot.y = 50; // выравниваем по оси y
         app.stage.addChild(gameOverText); //выводим на холсте
+        
+        model.saveResult();
 },
     createCanvas: function() {
         if(!app){
