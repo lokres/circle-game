@@ -6,13 +6,24 @@ var colors;
 var scoreEl;
 var timeEl;
 var ticker = false;
+
+var menuItem = [
+    play => true,
+    newGame => false,
+    stopGame => false,
+]
+
 $( document ).ready(function() {
     $.arcticmodal('setDefault', {
     closeOnEsc: false,
     closeOnOverlayClick: false,
     afterClose: function(data, el) {
-        $('#play').show();
-        $('#stopGame').show();
+        for (var key in menuItem) {
+            if(menuItem[key])
+                $('#'+key).show();
+            else
+                $('#'+key).hide();
+        }
     }
 });
     $('#menuModal').arcticmodal();
@@ -26,8 +37,7 @@ $( document ).ready(function() {
 
     $('body').on('click', '#play',function(){
         $('#menuModal').arcticmodal('close');
-         $('#stopGame').show();
-         $('#play').hide();
+        menuItem['stopGame'] = true;
         ticker.start();
     });
 
@@ -38,9 +48,10 @@ $( document ).ready(function() {
     });
     
      $('body').on('click', '#stopGame',function(){
-        $('#menuModal').arcticmodal();
+        $('#menuModal').arcticmodal('close');
         if(ticker) {
-            $('#stopGame').hide();
+            menuItem['stopGame'] = false;
+            menuItem['play'] = false;
             app.ticker.stop();
             model.gameOver();
         }
@@ -48,6 +59,8 @@ $( document ).ready(function() {
     
     $('body').on('click', '#newGame',function(){
         $('#menuModal').arcticmodal('close');
+        menuItem['stopGame'] = true;
+        menuItem['play'] = true;
         if(app){
             
             while(app.stage.children[0]) 
@@ -66,8 +79,6 @@ var model = {
             fill: '0xffffff',
             fontSize: '6vw',
         }); 
-        $('#stopGame').hide();
-         $('#play').hide();
         var gameOverText = new PIXI.Text('Game Over', style); //собственно выводимый текст
         gameOverText.x = width / 2; //центрируем относительно экрана
         gameOverText.y = height / 2; //центрируем относительно экрана
@@ -105,7 +116,6 @@ var model = {
     },
     
     drawScore: function() {
-        console.log("score"+stat.score);
         timeEl.innerHTML = Math.floor(stat.time);
         scoreEl.innerHTML = Math.floor(stat.score);
     }
