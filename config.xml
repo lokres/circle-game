@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
+    xmlns:android = "http://schemas.android.com/apk/res/android"
     id          = "com.mikheev.circles"
     versionCode = "17"
     version     = "1.1.2" >
@@ -29,6 +30,6 @@
     <icon src="img/android/mipmap-xxxhdpi/ic_launcher.png" platform="android" qualifier="xxxhdpi" />
     
     <config-file platform="android" parent="/manifest" mode="merge">
-       
+        <uses-permission android:name="android.permission.INTERNET" />
     </config-file>
 </widget>
