@@ -29,6 +29,6 @@
     <icon src="img/android/mipmap-xxxhdpi/ic_launcher.png" platform="android" qualifier="xxxhdpi" />
     
     <config-file platform="android" parent="/manifest" mode="merge">
-        <uses-permission android:name="android.permission.INTERNET" />
+       
     </config-file>
 </widget>
