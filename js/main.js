@@ -100,7 +100,7 @@ var model = {
         gameOverText.pivot.y = 50; // выравниваем по оси y
         app.stage.addChild(gameOverText); //выводим на холсте
         
-        model.saveResult();
+    //    model.saveResult();
 },
     createCanvas: function() {
         if(!app){
