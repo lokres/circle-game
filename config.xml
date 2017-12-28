@@ -18,7 +18,7 @@
       Mikheev Aleksey
   </author>
     <preference name="orientation" value="portrait" />
-    <preference name="android-minSdkVersion" value="23">
+
     <preference name="android-targetSdkVersion" value="24" />
     <access origin="*" />
     
