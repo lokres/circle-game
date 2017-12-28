@@ -17,7 +17,6 @@
       Mikheev Aleksey
   </author>
     <preference name="orientation" value="portrait" />
-    <preference name="android-minSdkVersion" value="10" />
     <preference name="android-targetSdkVersion" value="12" />
     <icon src="img/android/mipmap-mdpi/ic_launcher.png" platform="android" qualifier="mdpi" />
     <icon src="img/android/mipmap-hdpi/ic_launcher.png" platform="android" qualifier="hdpi" />
