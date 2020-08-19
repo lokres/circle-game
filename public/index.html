@@ -20,7 +20,7 @@ and open the template in the editor.
     </head>
     <body style=" background-color: black">
         <div id="container"></div>
-        <div id="scoreContainer"><div id="leftScoreBlock">Your Time: <span id="time"></span>&nbsp;&nbsp;&nbsp;&nbsp; Your score: <span id="score"></span></div> 
+        <div id="scoreContainer"><div id="leftScoreBlock">Your Time: <span id="time"></span>&nbsp;&nbsp;&nbsp;&nbsp; Your score: <span id="score"></span></div>
             <div id="menu" >Menu</div>
         </div>
 
@@ -33,6 +33,29 @@ and open the template in the editor.
                 <li id="bests" style="display: none"><span>Best Score</span></li>
             </ul>
         </div>
-    </div>        
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA-IlZkQRoIjHNDbc6h0Imb2UZmyxsP_b8",
+    authDomain: "circle-circles.firebaseapp.com",
+    databaseURL: "https://circle-circles.firebaseio.com",
+    projectId: "circle-circles",
+    storageBucket: "circle-circles.appspot.com",
+    messagingSenderId: "689853876776",
+    appId: "1:689853876776:web:78d189734a57a17e42c31d",
+    measurementId: "G-LNX5YQ3QM0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
     </body>
 </html>

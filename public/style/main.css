@@ -1,18 +1,19 @@
-* 
+*
 {
   margin: 0;
   padding: 0;
 }
 
-#container 
+#container
 {
     padding:10px;
-    height: 95%
+    height: 95%;
+    cursor: pointer;
 }
 
 #scoreContainer
 {
-    color: white; font-size: 4vw;    
+    color: white; font-size: 4vw;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
