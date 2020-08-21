@@ -46,7 +46,7 @@ $( document ).ready(function() {
         if(ticker)
             ticker.stop();
     });
-    
+
      $('body').on('click', '#stopGame',function(){
         $('#menuModal').arcticmodal('close');
         if(ticker) {
@@ -56,14 +56,14 @@ $( document ).ready(function() {
             model.gameOver();
         }
     });
-    
+
     $('body').on('click', '#newGame',function(){
         $('#menuModal').arcticmodal('close');
         menuItem['stopGame'] = true;
         menuItem['play'] = true;
         if(app){
-            
-            while(app.stage.children[0]) 
+
+            while(app.stage.children[0])
             { app.stage.removeChild(app.stage.children[0]); }
             stat = defaultStat;
             app.ticker.start();
@@ -92,14 +92,14 @@ var model = {
         var style = new PIXI.TextStyle({ //стили для текста
             fill: '0xffffff',
             fontSize: '6vw',
-        }); 
+        });
         var gameOverText = new PIXI.Text('Game Over', style); //собственно выводимый текст
         gameOverText.x = width / 2; //центрируем относительно экрана
         gameOverText.y = height / 2; //центрируем относительно экрана
         gameOverText.pivot.x = 50; //выравниваем по оси х
         gameOverText.pivot.y = 50; // выравниваем по оси y
         app.stage.addChild(gameOverText); //выводим на холсте
-        
+
     //    model.saveResult();
 },
     createCanvas: function() {
@@ -110,7 +110,7 @@ var model = {
 
     },
     drawCircle: function() {
-        
+
         rand = Math.floor(Math.random() * colors.length); //генерим рандомное число (в промежутке от 0 до количества цветов в массиве цветов)
         var radius = 12; //радиус круга
         var inAreaX = width; //возможные координаты по оси X, которые может занимать круг, ширина страницы минус его диаметр
@@ -128,16 +128,17 @@ var model = {
         circle.on('pointerdown', controller.clearFigure); //добавляем возможность при клике на фигуру удалить её
         stat.setCircles += 1;
         stat.circleIds.push(circle);
-        
+
     },
-    
+
     drawScore: function() {
         timeEl.innerHTML = Math.floor(stat.time);
         scoreEl.innerHTML = Math.floor(stat.score);
     }
-}         
+}
 var view = {
     chance:0.015,
+    quantity:1,
     timing:1,
     loadGame: function() {
         model.createCanvas();
@@ -151,7 +152,7 @@ var defaultStat = {
     setCircles : 0,
     unsetCircles : 0,
     circleIds : [],
-    
+
 }
 var stat = {
     score : 0,
@@ -159,20 +160,23 @@ var stat = {
     setCircles : 0,
     unsetCircles : 0,
     circleIds : [],
-    
+
 }
 var timing = 0;
 function gameLoop(delta){
     timing +=  0.014;
-    if(Math.random() <  view.chance){
-        model.drawCircle();
+    for(var i=1; i <= view.quantity; i++) {
+        console.log();
+        if(Math.random() <  view.chance){
+            model.drawCircle();
+        }
     }
     if(timing > 1) {
         timing = 0;
         circles = stat.setCircles - stat.unsetCircles;
         stat.time -= Math.floor(circles);
-        model.drawScore();    
-        
+        model.drawScore();
+
         if(stat.time < 0){
             stat.time = 0;
             model.drawScore();
@@ -188,6 +192,9 @@ var controller = {
 	clearFigure: function(){
             this.clear(); //удаляем фигуры по которой кликнули
             stat.time += 10; stat.score +=10;model.drawScore();view.chance +=0.00002;stat.unsetCircles+=1;
+            if (view.chance > 0.001) {
+                view.quantity=2;
+            }
 	},
         clearListener: function(){
             stat.circleIds.forEach(function(circle,i){
